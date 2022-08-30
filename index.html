@@ -1,12 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fliqlo</title>
-</head>
-<body>
-  <h1>Fliqlo in browser</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fliqlo</title>
+
+    <link rel="stylesheet" href="./src/styles.css" />
+    <link rel="stylesheet" href="./src/flip_animation.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="theme-switcher">
+        <label class="theme-switch" for="checkbox">
+          <input type="checkbox" class="plus-minus" id="checkbox" />
+        </label>
+      </div>
+    </header>
+
+    <div class="line"></div>
+
+    <div class="container">
+      <div class="holder">
+        <div class="flip_container">
+          <div class="container-segment">
+            <div class="segment">
+              <div class="flip-card" data-hour-tens>
+                <div class="top">0</div>
+                <div class="bottom">0</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2 id="ampm">PM</h2>
+      </div>
+      <div class="holder" data-holder-tens>
+        <div class="flip_container">
+          <div class="container-segment">
+            <div class="segment">
+              <div class="flip-card" data-minute-tens>
+                <div class="top">0</div>
+                <div class="bottom">0</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="https://unpkg.com/dayjs@1.11.5/dayjs.min.js"></script>
+  <script src="./src/main.js" type="module"></script>
 </html>

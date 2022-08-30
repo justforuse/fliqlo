@@ -1,0 +1,25 @@
+{
+  "name": "fliqlo",
+  "version": "1.0.0",
+  "description": "Fliqlo in browser",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justforuse/fliqlo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/justforuse/fliqlo/issues"
+  },
+  "homepage": "https://github.com/justforuse/fliqlo#readme",
+  "devDependencies": {
+    "vite": "^3.0.9"
+  }
+}
