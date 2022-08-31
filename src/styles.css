@@ -64,35 +64,39 @@ svg:hover {
 }
 
 .line {
-  width: 100%;
+  width: 100vw;
   height: 8px;
   background-color: var(--holder);
   position: absolute;
   top: 50%;
+  left: 0;
   z-index: 2;
+  transform: translate(0, -50%)
 }
 
 .container {
   height: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
   padding: 0 1% 0 1%;
 }
 
 .holder {
   position: relative;
 
-  width: clamp(20vw, 45vw, 65vh);
+  width: 65vmin;
+  /* width: clamp(20vw, 45vw, 65vh); */
   /* height: 80%; */
 
-  margin: auto 1%;
+  margin: auto 3vmin;
+  padding: 2vmin;
   justify-content: center;
   align-items: center;
   background-color: var(--holder);
   /* background-color: #626262; */
 
-  border-radius: 50px;
+  border-radius: 10vmin;
 }
 .holder h1 {
   color: var(--text);

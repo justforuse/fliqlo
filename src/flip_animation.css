@@ -1,6 +1,7 @@
 *::after, *::before, .flip_container * {
     box-sizing: border-box;
     font-size: clamp(30vw,40vw,50vw);
+    font-size: 50vmin;
     color: var(--text);
     /* transition: all .5s; */
 }
