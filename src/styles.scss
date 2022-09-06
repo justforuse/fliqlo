@@ -1,13 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=block');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=block');
 
 :root {
   --background: black;
   --line: black;
-  --text: #b7b7b7;
-  --holder: #101010;
+  --text: #c6c6c6;
+  --holder: #272727;
   --theme_container_border: rgba(146, 146, 146, 0.481);
   --theme-secondary: white;
   --theme_shadow: black;
+  --white: #fff;
+
+  --icon-size: 6.5vw;
+  --font-size: 65vmin;
 }
 
 [data-theme='dark'] {
@@ -22,20 +26,33 @@
 
 html,
 body {
+  font-family: 'Oswald';
   background-color: var(--background);
   margin: 0;
   padding: 0;
   height: 100%;
-
-  font-family: 'Bebas Neue';
+  font-weight: bold;
 }
 
 header {
   text-align: right;
-  padding: 2vw;
+  padding: 20px 40px;
   position: absolute;
   top: 0;
   right: 0;
+  color: var(--text);
+  font-size: var(--icon-size);
+  display: flex;
+  align-items: flex-start;
+
+  .theme-switcher {
+    display: none;
+  }
+
+  a {
+    font-size: 6vmin;
+    color: var(--white);
+  }
 }
 :fullscreen header {
   display: none;
@@ -43,13 +60,6 @@ header {
 #ampm {
   display: none;
 }
-/* .theme-switcher {
-  display: inline-block;
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  background-color: rgb(182, 182, 182);
-} */
 
 .hide {
   display: none !important;
@@ -71,7 +81,7 @@ svg:hover {
   top: 50%;
   left: 0;
   z-index: 2;
-  transform: translate(0, -50%)
+  transform: translate(0, -50%);
 }
 
 .container {
@@ -85,16 +95,15 @@ svg:hover {
 .holder {
   position: relative;
 
-  width: 65vmin;
-  /* width: clamp(20vw, 45vw, 65vh); */
-  /* height: 80%; */
+  width: 75vmin;
+  height: 75vmin;
 
   margin: auto 3vmin;
   padding: 2vmin;
+  display: flex;
   justify-content: center;
   align-items: center;
   background-color: var(--holder);
-  /* background-color: #626262; */
 
   border-radius: 10vmin;
 }
@@ -151,8 +160,8 @@ svg:hover {
   perspective: 240px;
   border-radius: 50%;
 
-  width: 2vw;
-  height: 2vw;
+  width: var(--icon-size);
+  height: var(--icon-size);
   margin-top: 9px;
 
   /* border: 4px solid var(--svg); */
@@ -355,17 +364,6 @@ svg:hover {
     margin: auto 5px;
   }
 
-  /* CHANGED FOR TESTING ------------------------------------------ */
-  .social > svg,
-  .social > a > svg {
-    width: 7vw;
-    height: 7vw;
-  }
-  .social > a {
-    height: 7vw;
-  }
-  /* CHANGED FOR TESTING ------------------------------------------ */
-
   svg {
     width: 8vw;
     height: 8vw;
@@ -378,91 +376,7 @@ svg:hover {
     display: block;
   }
 
-  /* MENU & THEME CONTAINER */
-  .menu1 {
-    gap: 3vw;
-  }
-  .menu2 {
-    bottom: 4%;
-  }
-  .menu2 > svg,
-  .menu1 > svg {
-    width: 8vw;
-    height: 8vw;
-    transition: all 0.2s ease-in-out;
-  }
-  .menu2 > svg,
-  .menu2 > a > svg {
-    margin: 1vw 0;
-  }
-  .menu2 > #pro_subscription {
-    display: none;
-    width: 10.5vw;
-    height: 10.2vw;
-  }
-  .menu2 > #pro_plus_subscription {
-    display: none;
-    width: 15.5vw;
-    height: 14.5vw;
-  }
-  .menu2 > a > #upgrade {
-    width: 20.5vw;
-    height: 7.5vw;
-    transition: all 0.2s ease-in-out;
-  }
-  .menu2 > a > #contact {
-    width: 8.5vw;
-    height: 8.5vw;
-  }
-  .themes_container {
-    width: 50%;
-    bottom: 5%;
-    right: 18%;
-    gap: 5vw;
-    padding: 3vw;
-    border-radius: 3vw;
-  }
-  .themes_container > svg {
-    width: 6.5vw;
-    height: 6.5vw;
-    border-radius: 100%;
-  }
-
-  /* features */
-  .info {
-    gap: 2vw;
-  }
-  .features_popup {
-    padding: 7vw 7vw;
-    width: 65%;
-  }
-  .feature {
-    gap: 3vw;
-    width: fit-content;
-  }
-  .cookies_warning {
-    padding: 2vw 3vw;
-  }
-  #feature_toggle {
-    top: 2%;
-    right: 5%;
-    width: 12px;
-  }
-  .analytics {
-    display: none;
-  }
-
   @media screen and (orientation: landscape) {
-    /* CHANGED FOR TESTING ------------------------------------------ */
-    .social > svg,
-    .social > a > svg {
-      width: 4vw;
-      height: 4vw;
-    }
-    .social > a {
-      height: 4vw;
-    }
-    /* CHANGED FOR TESTING ------------------------------------------ */
 
     svg {
       width: 4vw;
@@ -473,57 +387,6 @@ svg:hover {
     .plus-minus {
       width: 3.2vw;
       height: 3.2vw;
-    }
-    /* MENU & THEME CONTAINER */
-    .menu1 {
-      gap: 2vw;
-      margin: 0;
-    }
-    .menu2 {
-      bottom: 9%;
-      margin: 10px 0;
-    }
-    .menu2 > svg,
-    .menu1 > svg {
-      width: 4vw;
-      height: 4vw;
-      transition: all 0.2s ease-in-out;
-    }
-    .menu2 > svg,
-    .menu2 > a > svg {
-      margin: 1vw 0;
-    }
-    .menu2 > #pro_subscription {
-      display: none;
-      width: 6.5vw;
-      height: 4.2vw;
-    }
-    .menu2 > #pro_plus_subscription {
-      display: none;
-      width: 6.5vw;
-      height: 5.5vw;
-    }
-    .menu2 > a > #upgrade {
-      width: 12.5vw;
-      height: 5vw;
-      transition: all 0.2s ease-in-out;
-    }
-    .menu2 > a > #contact {
-      width: 4.5vw;
-      height: 4.5vw;
-    }
-    .themes_container {
-      width: 35%;
-      bottom: 5%;
-      right: 6.5%;
-      gap: 3.5vw;
-      padding: 2.5vw;
-      border-radius: 3vw;
-    }
-    .themes_container > svg {
-      width: 4vw;
-      height: 4vw;
-      border-radius: 100%;
     }
   }
 }

@@ -18,11 +18,13 @@ function flipClock() {
   }
   hour = `0${hour}`.slice(-2)
   min = `0${min}`.slice(-2)
+  // hour = '01'
+  // min = '38'
   flip(document.querySelector('[data-hour-tens]'), hour)
   flip(document.querySelector('[data-minute-tens]'), min)
 }
 flipClock()
-setInterval(flipClock, 1000)
+// setInterval(flipClock, 1000)
 
 // FLIP ANIMATIONS MAIN FUNCTION
 function flip(flipCard, newNumber) {
