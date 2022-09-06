@@ -24,7 +24,7 @@ function flipClock() {
   flip(document.querySelector('[data-minute-tens]'), min)
 }
 flipClock()
-// setInterval(flipClock, 1000)
+setInterval(flipClock, 1000)
 
 // FLIP ANIMATIONS MAIN FUNCTION
 function flip(flipCard, newNumber) {
