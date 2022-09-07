@@ -55,19 +55,17 @@ function flip(flipCard, newNumber) {
   })
   flipCard.append(topFlip, bottomFlip)
 }
-const toggleSwitch = document.querySelector(
-  '.theme-switch input[type="checkbox"]'
-)
+const toggleSwitch = document.querySelectorAll('.theme')
 
-function switchTheme(e) {
-  if (e.target.checked) {
+function switchTheme() {
+  if (document.documentElement.getAttribute('data-theme') === 'light') {
     document.documentElement.setAttribute('data-theme', 'dark')
   } else {
     document.documentElement.setAttribute('data-theme', 'light')
   }
 }
 
-toggleSwitch.addEventListener('change', switchTheme, false)
+toggleSwitch.forEach(t => t.addEventListener('click', switchTheme, false))
 
 document.addEventListener('keypress', e => {
   console.log(e)
