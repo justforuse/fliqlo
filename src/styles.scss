@@ -70,8 +70,13 @@ header {
     margin-right: 12px;
   }
 }
-:fullscreen header {
-  display: none;
+:fullscreen {
+  body {
+    cursor: none;
+  }
+  header {
+    display: none;
+  }
 }
 #ampm {
   display: none;
