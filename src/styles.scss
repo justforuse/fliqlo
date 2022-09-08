@@ -10,11 +10,11 @@
   --theme_shadow: black;
   --white: #fff;
 
-  --icon-size: 6.5vw;
+  --icon-size: 6.5vmin;
   --font-size: 65vmin;
 }
 
-[data-theme='dark'] {
+[data-theme='light'] {
   --background: #f3f3f3;
   --text: #000000;
   --line: #e6e6e6;
@@ -24,6 +24,19 @@
   --theme_shadow: rgba(0, 0, 0, 0);
 }
 
+.light-theme {
+  display: none;
+}
+
+[data-theme='light'] {
+  .dark-theme {
+    display: none;
+  }
+  .light-theme {
+    display: inline;
+  }
+}
+
 html,
 body {
   font-family: 'Oswald';
@@ -31,27 +44,30 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  font-weight: bold;
 }
 
 header {
   text-align: right;
   padding: 20px 40px;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   color: var(--text);
   font-size: var(--icon-size);
   display: flex;
-  align-items: flex-start;
-
-  .theme-switcher {
-    display: none;
-  }
+  align-items: center;
 
   a {
-    font-size: 6vmin;
-    color: var(--white);
+    font-size: 0;
+    text-decoration: none;
+  }
+  i {
+    cursor: pointer;
+    font-size: var(--icon-size);
+    color: var(--text);
+  }
+  > i {
+    margin-right: 12px;
   }
 }
 :fullscreen header {
@@ -90,6 +106,7 @@ svg:hover {
   flex-direction: row;
   justify-content: center;
   padding: 0 1% 0 1%;
+  font-weight: bold;
 }
 
 .holder {
@@ -377,7 +394,6 @@ svg:hover {
   }
 
   @media screen and (orientation: landscape) {
-
     svg {
       width: 4vw;
       height: 4vw;

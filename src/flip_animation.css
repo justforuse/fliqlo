@@ -20,6 +20,10 @@
   user-select: none;
 }
 
+[data-theme='light'] .flip-card {
+  text-shadow: unset;
+}
+
 .top,
 .bottom,
 .flip-card .top-flip,
